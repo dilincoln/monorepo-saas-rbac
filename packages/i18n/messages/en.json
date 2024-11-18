@@ -1,0 +1,20 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "already_registered_sign_in": "Already registered? Sign in",
+  "confirm_your_password": "Confirm your password",
+  "create_account": "Create account",
+  "create_new_account": "Create new account",
+  "email": "E-mail",
+  "forgot_your_password": "Forgot your password?",
+  "invalid_auth_token": "Invalid auth token",
+  "invalid_credentials": "Invalid Credentials",
+  "log_out": "Log out",
+  "name": "Name",
+  "password": "Password",
+  "recover_password": "Recover password",
+  "sign_in_failed": "Sign in failed",
+  "sign_in_instead": "Sign in instead",
+  "sign_in_with_email": "Sign in with e-mail",
+  "user_not_found": "User not found",
+  "user_with_this_email_already_exists": "A user with this e-mail already exists"
+}

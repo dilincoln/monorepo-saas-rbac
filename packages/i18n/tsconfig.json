@@ -1,0 +1,15 @@
+{
+  "include": ["paraglide"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "declaration": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "outDir": "./types",
+    "emitDeclarationOnly": true,
+    "declarationMap": true
+  }
+}

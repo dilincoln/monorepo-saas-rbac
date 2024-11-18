@@ -1,0 +1,53 @@
+{
+  "name": "@saas/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "paraglide/messages.js",
+    "paraglide/runtime.js"
+  ],
+  "exports": {
+    "./runtime": {
+      "default": "./paraglide/runtime.js",
+      "types": "./types/runtime.d.ts"
+    },
+    "./messages": {
+      "default": "./paraglide/messages.js",
+      "types": "./types/messages.d.ts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "run-p dev:*",
+    "dev:paraglide": "pnpm build --watch",
+    "dev:tsc": "tsc --watch",
+    "build": "paraglide-js compile --project ./i18n.inlang --outdir ./paraglide",
+    "postbuild": "tsc",
+    "translate:missing": "pnpm dlx @inlang/cli machine translate --project ./i18n.inlang",
+    "postinstall": "pnpm build"
+  },
+  "devDependencies": {
+    "@inlang/cli": "^2.18.1",
+    "@inlang/paraglide-js": "1.11.3",
+    "@saas/ts-config": "workspace:*",
+    "eslint": "^8.57.1",
+    "eslint-plugin-jsonc": "^2.18.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "next": "^15.0.0"
+  },
+  "eslintConfig": {
+    "ignorePatterns": [
+      "**/*.*",
+      "!messages/*.json"
+    ],
+    "extends": [
+      "plugin:jsonc/recommended-with-jsonc"
+    ],
+    "rules": {
+      "jsonc/sort-keys": "error"
+    }
+  }
+}

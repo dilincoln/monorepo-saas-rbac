@@ -1,0 +1,65 @@
+{
+  "name": "@saas/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm env:load next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "env:load": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toggle": "^1.1.0",
+    "@radix-ui/react-toggle-group": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.4",
+    "@saas/api-types": "workspace:*",
+    "@saas/env": "workspace:*",
+    "@saas/i18n": "workspace:*",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "cookies-next": "^5.0.2",
+    "lucide-react": "^0.456.0",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-603e6108-20241029",
+    "react-dom": "19.0.0-rc-603e6108-20241029",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@saas/eslint-config": "workspace:*",
+    "@saas/prettier-config": "workspace:*",
+    "@saas/ts-config": "workspace:*",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.0.3",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  },
+  "prettier": "@saas/prettier-config",
+  "eslintConfig": {
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "react/jsx-sort-props": "error"
+    },
+    "extends": [
+      "@saas/eslint-config/next",
+      "next/core-web-vitals",
+      "plugin:tailwindcss/recommended"
+    ]
+  }
+}

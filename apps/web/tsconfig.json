@@ -1,0 +1,16 @@
+{
+  "extends": "@saas/ts-config/nextjs.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/auth"
+  ],
+  "exclude": ["node_modules"]
+}

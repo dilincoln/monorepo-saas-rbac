@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Fastify: debug back-end API",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/api",
+      "command": "pnpm dev",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/web",
+      "command": "pnpm dev",
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMapPathOverrides": {
+        "?:*/apps/web/*": "${workspaceFolder}/*",
+        "?:*\\.next\\*": "${workspaceFolder}/apps/web/.next/*"
+      }
+    },
+    {
+      "name": "Next.js: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "sourceMapPathOverrides": {
+        "React*": "${workspaceFolder}/*"
+      }
+    },
+    {
+      "name": "i18n: translate",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/packages/i18n",
+      "command": "pnpm dev"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "SaaS: debug full stack",
+      "configurations": [
+        "i18n: translate",
+        "Fastify: debug back-end API",
+        "Next.js: debug client-side",
+        "Next.js: debug server-side"
+      ],
+      "stopAll": true
+    }
+  ]
+}

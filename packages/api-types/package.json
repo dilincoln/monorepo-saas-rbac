@@ -1,0 +1,39 @@
+{
+  "name": "@saas/api-types",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/nextJsSaaSAPI.schemas.ts",
+    "./*": "./dist/*/*.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "postinstall": "pnpm env:load tsx src/parseOpenAPI.ts",
+    "build": "pnpm env:load tsx src/parseOpenAPI.ts",
+    "env:load": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "orval": "^7.2.0"
+  },
+  "devDependencies": {
+    "@saas/eslint-config": "workspace:*",
+    "@saas/prettier-config": "workspace:*",
+    "@saas/ts-config": "workspace:*",
+    "@types/node": "^22.9.0",
+    "eslint": "^8.57.1",
+    "tsx": "^4.19.2"
+  },
+  "peerDependencies": {
+    "@saas/api": "workspace:*",
+    "@saas/env": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@saas/eslint-config/library"
+    ]
+  },
+  "prettier": "@saas/prettier-config"
+}

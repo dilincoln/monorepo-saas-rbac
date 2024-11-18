@@ -1,0 +1,26 @@
+{
+  "name": "@saas/auth",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@saas/eslint-config": "workspace:*",
+    "@saas/prettier-config": "workspace:*",
+    "@saas/ts-config": "workspace:*",
+    "eslint": "^8.57.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@saas/eslint-config/library"
+    ]
+  },
+  "prettier": "@saas/prettier-config",
+  "dependencies": {
+    "@casl/ability": "^6.7.2",
+    "zod": "^3.23.8"
+  }
+}
